@@ -1,9 +1,54 @@
+import axios from "axios";
 
 
+
+export const imagesData = "IMAGES_DATA";
 export const incrementCount = 'INCREMENT_COUNT';
 export const decrementCount = "DECREMENT_COUNT";
 export const addTodo = "ADD_TODO";
 export const removeTodo = "REMOVE_TODO"
+export const deleteUser = "DELETE_USER";
+export const aboutUser = "ABOUT_USER";
+
+export const aboutRoute = (data) => (dispatch,getState) => {
+    
+
+    // const {aboutReducer:{aboutUsersData}} = getState();
+
+    dispatch({
+        type:aboutUser,
+        payload:data
+    })
+
+}
+
+
+export const backendData = () => async(dispatch,getState) => {
+
+    const data = await axios.get(" https://jsonplaceholder.typicode.com/albums")
+
+    dispatch({
+        type:imagesData,
+        payload: data.data.slice(0,10)
+    })
+
+}
+
+
+
+export const imageDelete = (user) => (dispatch,getState) => {
+    const {imagesReducer} = getState();
+    const {data} = imagesReducer;
+
+    console.log(imagesReducer)
+    
+    const filteredDate = data?.filter((eachItem => eachItem.id !== user.id))
+
+    dispatch({
+        type:deleteUser,
+        payload:filteredDate
+    })
+}
 
 
 export const userInfo = (user) => (dispatch,getState) => {

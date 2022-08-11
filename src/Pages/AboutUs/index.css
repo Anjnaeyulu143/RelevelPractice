@@ -1,0 +1,20 @@
+.aboutUsContainer{
+    min-height:100vh;
+}
+
+.paginationBttns{
+    width: 100vw;
+    height:100px;
+    display:"flex";
+    justify-content:center;
+    flex-direction:row;
+    list-style:none;
+    margin-left:0px;
+    padding-left:0px;
+}
+
+.paginationBttns li a {
+    padding: 10px;
+    margin: 8px;
+}
+
