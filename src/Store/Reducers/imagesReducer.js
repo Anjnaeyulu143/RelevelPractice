@@ -1,6 +1,6 @@
 // import axios from "axios"
 // import { useEffect, useState } from "react";
-import { imagesData,deleteUser } from "../Actions";
+import { imageData,deleteUser } from "../Actions";
 
 
 //   const gettingData = async() => {
@@ -30,7 +30,7 @@ const initialState = {
 
 export const imagesReducer = (state=initialState,action)=>{
     switch(action.type){
-        case imagesData:
+        case imageData:
             return {...state,data:action.payload}
 
         case deleteUser:

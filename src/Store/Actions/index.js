@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 
-export const imagesData = "IMAGES_DATA";
+export const imageData = "IMAGES_DATA";
 export const incrementCount = 'INCREMENT_COUNT';
 export const decrementCount = "DECREMENT_COUNT";
 export const addTodo = "ADD_TODO";
@@ -28,7 +28,7 @@ export const backendData = () => async(dispatch,getState) => {
     const data = await axios.get(" https://jsonplaceholder.typicode.com/albums")
 
     dispatch({
-        type:imagesData,
+        type:imageData,
         payload: data.data.slice(0,10)
     })
 

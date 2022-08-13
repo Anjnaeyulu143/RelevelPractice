@@ -1,0 +1,24 @@
+.gallery__container{
+    position: relative;
+    text-align: center;
+    color: #fff;
+    transition: 1000ms;
+    cursor: pointer;
+    
+}
+
+.gallery__image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: 1000ms;
+}
+
+
+.gallery__container:hover .gallery__image{
+   
+    opacity: 1;
+    background-color:rgba(77, 74, 74, 0.35)
+}

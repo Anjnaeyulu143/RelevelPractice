@@ -43,7 +43,6 @@ export const AboutUs = () => {
 
   const page = Math.ceil(displayUsers?.length/usersPerPage)
 
-  console.log(page)
 
   const changePage = ({selected}) => {
     setPageCount(selected)

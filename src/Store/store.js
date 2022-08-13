@@ -5,6 +5,7 @@ import { countReducer } from "./Reducers/todoReducer";
 import { todoManager } from "./Reducers/todoList";
 import { imagesReducer } from "./Reducers/imagesReducer";
 import { aboutReducer } from "./Reducers/aboutReducer";
+import { instagramReducer } from "./Reducers/Instagram/instagramReducer"; 
 
 
 const middleWare = [thunk]
@@ -14,6 +15,7 @@ const rootReducer = combineReducers({
     todoManager,
     imagesReducer,
     aboutReducer,
+    instagramReducer,
 })
 
 const store = createStore(
