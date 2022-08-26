@@ -1,33 +1,27 @@
-import { imagesData,modalToggle,postDetails } from "../../Actions/InstagramApp"
-
+import {
+  imagesData,
+  modalToggle,
+  postDetailsReducer,
+} from "../../Actions/InstagramApp";
 
 const intialState = {
-    data : {},
-    boolean: false,
-    currentPost:{}
-}
+  data: {},
+  boolean: false,
+  currentPost: {},
+};
 
+export const instagramReducer = (state = intialState, action) => {
+  switch (action.type) {
+    case imagesData:
+      return action.payload;
 
-export const instagramReducer = (state=intialState,action) => {
-    switch (action.type){
-        case imagesData:
-            return {
-                ...state,
-                data:action.payload
-            }
-        case modalToggle:
-            return {
-                ...state,boolean:action.payload
-            }
+    case postDetailsReducer:
+      return action.payload;
 
-        case postDetails:
-            return{
-                ...state,
-                currentPost:action.payload
-            }
-                    
+    case modalToggle:
+      return action.payload;
 
-        default:
-            return state
-    }
-}
+    default:
+      return state;
+  }
+};

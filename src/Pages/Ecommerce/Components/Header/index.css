@@ -1,0 +1,30 @@
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading__search-bar {
+  display: flex;
+  background-color: rgb(6, 109, 109);
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+}
+
+.heading__search-bar input {
+  width: 50%;
+  padding: 0.5rem 0rem;
+  outline: none;
+}
+
+.header__serach-name {
+  background-color: orange;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.header__link {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: black;
+}

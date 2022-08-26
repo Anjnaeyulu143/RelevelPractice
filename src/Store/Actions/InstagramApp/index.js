@@ -1,40 +1,44 @@
-
 import { initialState } from "../../data";
 
 export const imagesData = "IMAGES_DATA";
 export const modalToggle = "MODAL_TOGGLE";
-export const postDetails = "POST_DETAILS";
+export const postDetailsReducer = "POST_DETAILS";
 
+export const instagramData = () => (dispatch, getState) => {
+  const { instagramReducer } = getState();
 
-export const instagramData = () => (dispatch,getstate) => {
+  dispatch({
+    type: imagesData,
+    payload: {
+      ...instagramReducer,
+      data: initialState,
+    },
+  });
+};
 
-    
-    dispatch({
-        type:imagesData,
-        payload:initialState
-    })
+export const toggleModal = (bool) => (dispatch, getState) => {
+  const { instagramReducer } = getState();
 
-}
+  dispatch({
+    type: modalToggle,
+    payload: {
+      ...instagramReducer,
+      boolean: bool,
+    },
+  });
+};
 
+export const viewPostData = (userDetails) => (dispatch, getState) => {
+  const { instagramReducer } = getState();
 
-export const toggleModal = (bool) => (dispatch,getState) => {
+  const { bool, postDetails } = userDetails;
 
-    const {instagramReducer} = getState();
-
-    const {boolean} = instagramReducer
-    
-    dispatch({
-        type:modalToggle,
-        payload:bool
-    })
-
-}
-
-export const viewPostData = (post) => (dispatch,getState) => {
-    const {instagramReducer:{currentPost}} = getState();
-
-    dispatch({
-        type:postDetails,
-        payload:post
-    })
-}
+  dispatch({
+    type: postDetailsReducer,
+    payload: {
+      ...instagramReducer,
+      boolean: bool,
+      currentPost: postDetails,
+    },
+  });
+};

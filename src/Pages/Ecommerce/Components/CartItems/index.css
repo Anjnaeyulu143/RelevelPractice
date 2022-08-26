@@ -1,0 +1,25 @@
+.cartitems__container {
+  display: flex;
+}
+
+.cartimage__container {
+  height: 16em;
+  width: 50%;
+}
+
+.cartItems__details {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 560px) {
+  .cartitems__container {
+    flex-direction: column;
+  }
+  .cartimage__container {
+    width: 100%;
+  }
+}
